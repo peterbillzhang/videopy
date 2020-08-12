@@ -26,8 +26,5 @@ dff_ = pd.pivot_table(dff, values=["total_cases"] ,index=["date"], columns=["loc
 # replace tuple column names into string
 dff_.columns = [(k) for (j,k) in dff_.columns]
 
-fig, ax = plt.subplots(figsize=(1.280, 0.720), dpi=100)
-ax.set_facecolor((0, 0, 1, .3))
-
 # save video mp4 file
-bcr.bar_chart_race(dff_, 'covid_19.mp4', fig=fig, title=f"COVID-19 Total Cases by Country up to {max_date}", n_bars=15, filter_column_colors=True)
+bcr.bar_chart_race(dff_, 'covid_19.mp4', figsize=(10, 6), title=f"COVID-19 Total Cases by Country up to {max_date}", n_bars=15, filter_column_colors=True)
